@@ -1,7 +1,6 @@
 package fiek.unipr.online_rent_a_car;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
