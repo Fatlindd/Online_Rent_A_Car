@@ -1,7 +1,10 @@
 package fiek.unipr.online_rent_a_car;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,9 +13,13 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Variabla e cila percakton se pas disa sekondash te animacionit
+    //kalon tek faqja tjeter. 6000 nenkupton 6 sekonda.
+
+    private static int SPLASH_SCREEN = 4000;
+
     //Deklarimi variablave per animacione
-    Animation top_anim;
-    Animation bottom_anim;
+    Animation top_anim, bottom_anim;
     //Vendosja e animacionit ne foton dhe tekstin ne faqe te pare
     ImageView foto;
     TextView logo, teksti;
@@ -40,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
         foto.setAnimation(top_anim);
         logo.setAnimation(bottom_anim);
         teksti.setAnimation(bottom_anim);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this,Login.class);
+                startActivity(intent);
+                finish();
+            }
+        },SPLASH_SCREEN);
 
     }
 }
