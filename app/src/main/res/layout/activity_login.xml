@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:background="#e6ffff"
-    android:padding="15dp"
+    android:padding="12dp"
     android:orientation="vertical">
 
     <ImageView
@@ -19,26 +19,18 @@
         android:id="@+id/slogan_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/welcome"
-        android:textSize="32sp"
         android:fontFamily="@font/bangers"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/amarante"
-        android:text="@string/login_info"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textColor="@color/cardview_dark_background"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textSize="30sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:padding="7dp"
+        android:padding="12dp"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
