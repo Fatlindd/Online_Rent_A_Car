@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login"
     android:background="#e6ffff"
-    android:padding="12dp"
+    android:padding="5dp"
     android:orientation="vertical">
 
     <ImageView
@@ -28,7 +28,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="20dp"
         android:padding="12dp"
         android:orientation="vertical">
@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:hint="@string/etUsername"
+            android:layout_marginBottom="7dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText

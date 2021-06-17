@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     //Variabla e cila percakton se pas disa sekondash te animacionit
-    //kalon tek faqja tjeter. 6000 nenkupton 6 sekonda.
+    //kalon tek faqja tjeter. 4000 nenkupton 4 sekonda.
 
     private static int SPLASH_SCREEN = 4000;
 
