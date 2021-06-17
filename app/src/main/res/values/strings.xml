@@ -3,4 +3,10 @@
     <string name="text">Online Rent A Car</string>
     <string name="slogan">Aplikacioni online i makinave me qera në gjithë Kosovën</string>
     <string name="login">LOGIN</string>
+    <string name="welcome">Mirësevini në aplikacionin tonë!</string>
+    <string name="login_info">LogIN për të vazhduar</string>
+    <string name="etUsername">Përdoruesi</string>
+    <string name="etPassword">Fjalëkalimi</string>
+    <string name="register_now">Përdorues i ri? Regjistrohu tani</string>
+    <string name="forget_password">Keni harruar fjalëkalimin?</string>
 </resources>
