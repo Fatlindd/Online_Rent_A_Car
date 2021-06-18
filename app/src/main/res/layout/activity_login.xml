@@ -70,6 +70,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/btn_password"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -80,6 +81,7 @@
             android:layout_margin="0dp"/>
 
         <Button
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -90,6 +92,7 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"

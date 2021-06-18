@@ -8,11 +8,11 @@
     android:orientation="vertical"
     android:background="#ccffff"
     android:gravity="center_vertical"
-    android:padding="20dp">
+    android:padding="10dp">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         android:background="@drawable/rent_online"
         tools:ignore="ContentDescription"
         android:id="@+id/foto"
@@ -21,7 +21,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         android:background="@drawable/background_register"
         android:id="@+id/relView"
         android:layout_below="@id/foto">
@@ -32,7 +32,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/acme"
             android:text="@string/sign_name"
-            android:textSize="22sp" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -51,8 +52,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sgn_name"
             android:fontFamily="@font/acme"
+            android:textColor="@color/black"
             android:text="@string/sign_lastname"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -71,8 +73,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sgn_lastname"
             android:fontFamily="@font/acme"
+            android:textColor="@color/black"
             android:text="@string/sign_email"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -91,8 +94,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sgn_email"
             android:fontFamily="@font/acme"
+            android:textColor="@color/black"
             android:text="@string/sign_number"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -111,9 +115,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/sgn_number"
             android:fontFamily="@font/acme"
+            android:textColor="@color/black"
             android:text="@string/etPassword"
-
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -144,8 +148,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_register"
             android:text="@string/register_to_login"
-            android:textSize="11sp"
-            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:textColor="#5b68ea"
             android:background="#00000000"/>
 
     </RelativeLayout>
