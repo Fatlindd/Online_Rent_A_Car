@@ -17,7 +17,8 @@ public class DBHelper extends SQLiteOpenHelper {
    //Tek onCreate krijohet tabela per databazen
     @Override
     public void onCreate(SQLiteDatabase db) {
-      db.execSQL("create Table Users(username Text primary key,password Text)");
+      db.execSQL("create Table Users(username Text,lastname Text,email Text," +
+              "number Text,password Text)");
     }
   //Kur dojm me bon Upgrading Aplikacionin ose me Databazen , atehere perdorim Drop Table per ta fshi tabelen Users
   // e cila tabel permban perdorust, dhe nje databaze e re pastaj krijohet me ane te konstruktorit DBHelper.
@@ -26,10 +27,13 @@ public class DBHelper extends SQLiteOpenHelper {
       db.execSQL("DROP Table IF EXISTS Users");
     }
 
-    public Boolean insertData(String username,String password){
+    public Boolean insertData(String username,String lastname ,String email, String number, String password){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues =new ContentValues();
         contentValues.put("username",username);
+        contentValues.put("lastname",lastname);
+        contentValues.put("email",email);
+        contentValues.put("number",number);
         contentValues.put("password",password);
         long result=db.insert("Users",null,contentValues);
 
@@ -56,7 +60,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
     //Metoda per passwordin e perdoresit
-    public Boolean check_password(String username ,String password){
+    public Boolean check_username_password(String username ,String password){
         SQLiteDatabase db =this.getWritableDatabase();
         Cursor cursor=db.rawQuery("SELECT * FROM Users WHERE username = ? AND password = ?",new String[]{username,password});
 
