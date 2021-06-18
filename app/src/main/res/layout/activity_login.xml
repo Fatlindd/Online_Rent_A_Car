@@ -13,7 +13,8 @@
         android:id="@+id/login_foto"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:background="@drawable/rent_online"/>
+        android:background="@drawable/rent_online"
+        tools:ignore="ContentDescription"/>
 
     <TextView
         android:id="@+id/slogan_name"
@@ -61,7 +62,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
+                android:imeOptions="actionDone"
                 android:drawableLeft="@drawable/lock_icon"
                 android:drawableStart="@drawable/lock_icon"
                 android:drawablePadding="10dp"
@@ -81,11 +82,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:background="@color/purple_200"
-            android:textStyle="bold"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:background="@color/purple_200"
+            android:textSize="20sp"
+            android:text="@string/login"
+            android:textStyle="bold" />
 
         <Button
             android:layout_width="match_parent"

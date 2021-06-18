@@ -3,13 +3,14 @@ package fiek.unipr.online_rent_a_car;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-public class Login extends AppCompatActivity {
 
+public class register_activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
+
 
     }
 }

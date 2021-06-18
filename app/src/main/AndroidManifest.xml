@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Online_Rent_A_Car">
-        <activity android:name=".Login"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.Online_Rent_A_Car.NoActionBarAndStatusBar">
+        <activity android:name=".register_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Online_Rent_A_Car.NoActionBarAndStatusBar">
+
         </activity>
 
         <meta-data

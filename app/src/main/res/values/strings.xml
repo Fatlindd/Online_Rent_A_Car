@@ -8,4 +8,15 @@
     <string name="etPassword">Fjalëkalimi</string>
     <string name="register_now">Përdorues i ri? Regjistrohu tani</string>
     <string name="forget_password">Keni harruar fjalëkalimin?</string>
+    <string name="sign_name">Emri</string>
+    <string name="sign_lastname">Mbiemri</string>
+    <string name="sign_email">Email</string>
+    <string name="sign_number">Numri Telefonit</string>
+    <string name="btn_register">Regjistrohu</string>
+    <string name="hint_emri">Shëno emrin tuaj...</string>
+    <string name="hint_mbiemri">Shëno mbiemrin tuaj...</string>
+    <string name="hint_email">Shëno email-in tuaj...</string>
+    <string name="hint_numri">Shëno numrin tuaj...</string>
+    <string name="hint_psw">Shëno fjalëkalimin tuaj...</string>
+    <string name="register_to_login">Kthehuni tek Login</string>
 </resources>
