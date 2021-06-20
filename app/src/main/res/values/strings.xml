@@ -19,4 +19,6 @@
     <string name="hint_numri">Shëno numrin tuaj...</string>
     <string name="hint_psw">Shëno fjalëkalimin tuaj...</string>
     <string name="register_to_login">Kthehuni tek Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="forget_psw">Forget Password</string>
 </resources>
