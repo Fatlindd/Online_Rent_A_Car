@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class register_activity extends AppCompatActivity {
 
@@ -28,6 +31,7 @@ public class register_activity extends AppCompatActivity {
         num_tel = (EditText) findViewById(R.id.sgn_number);
         password = (EditText) findViewById(R.id.sgn_psw);
         button_register = (Button) findViewById(R.id.btn_register);
+        
         db = new DBHelper(this);
 
         button_login = (Button)findViewById(R.id.login);
@@ -58,7 +62,9 @@ public class register_activity extends AppCompatActivity {
                     if(check_user_result == false){
                           Boolean rez = db.insertData(emri,mbiemri,mail,numri,psw);
                           if(rez == true){
-                              Toast.makeText(register_activity.this, "Regjistrimi përfundoj me sukses!", Toast.LENGTH_SHORT).show();
+
+                             Toast.makeText(register_activity.this, "Regjistrimi përfundoj me sukses!", Toast.LENGTH_SHORT).show();
+
                           }else{
                               Toast.makeText(register_activity.this, "Regjistrimi dështoj!", Toast.LENGTH_SHORT).show();
                           }
@@ -69,11 +75,9 @@ public class register_activity extends AppCompatActivity {
 
             }
         });
-
     }
 
     //Validimi apo trajtimi i gabimeve te Emrit
-
     private Boolean validateName(){
          String val_name = username.getText().toString();
          String noWhiteSpace = "(?=\\S+$)";
