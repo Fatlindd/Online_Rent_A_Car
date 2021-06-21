@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Online_Rent_A_Car">
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".register_activity"></activity>
-        <activity android:name=".Login" />
+        <activity android:name=".Login"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.Online_Rent_A_Car.NoActionBarAndStatusBar">
