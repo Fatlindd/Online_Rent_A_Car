@@ -34,13 +34,15 @@
             android:fontFamily="@font/acme"
             android:text="@string/sign_name"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/sign_name"
         android:id="@+id/sgn_name"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="8dp"
         android:hint="@string/hint_emri"
         android:importantForAutofill="no"
         android:maxLength="15"
@@ -56,7 +58,7 @@
             android:fontFamily="@font/acme"
             android:textColor="@color/black"
             android:text="@string/sign_lastname"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -64,6 +66,8 @@
         android:layout_below="@id/sign_lastname"
         android:id="@+id/sgn_lastname"
         android:hint="@string/hint_mbiemri"
+        android:drawableLeft="@drawable/user_lastname"
+        android:drawablePadding="8dp"
         android:importantForAutofill="no"
         android:maxLength="15"
         android:inputType="textCapWords"
@@ -78,7 +82,7 @@
             android:fontFamily="@font/acme"
             android:textColor="@color/black"
             android:text="@string/sign_email"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -86,6 +90,8 @@
         android:layout_below="@id/sign_email"
         android:id="@+id/sgn_email"
         android:hint="@string/hint_email"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="8dp"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:imeOptions="actionNext"
@@ -99,7 +105,7 @@
             android:fontFamily="@font/acme"
             android:textColor="@color/black"
             android:text="@string/sign_number"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -107,6 +113,8 @@
         android:layout_below="@id/sign_number"
         android:id="@+id/sgn_number"
         android:hint="@string/hint_numri"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="8dp"
         android:importantForAutofill="no"
         android:imeOptions="actionNext"
         />
@@ -119,7 +127,7 @@
             android:fontFamily="@font/acme"
             android:textColor="@color/black"
             android:text="@string/etPassword"
-            android:textSize="20sp" />
+            android:textSize="22sp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -127,6 +135,8 @@
         android:layout_below="@id/sign_psw"
         android:id="@+id/sgn_psw"
         android:hint="@string/hint_psw"
+        android:drawableLeft="@drawable/password"
+        android:drawablePadding="8dp"
         android:importantForAutofill="no"
         android:inputType="textPassword"
         android:imeOptions="actionNext"
