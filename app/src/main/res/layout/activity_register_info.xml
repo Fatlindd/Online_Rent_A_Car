@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".RegisterInfo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:layout_marginBottom="25dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/info_register"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:textColor="@color/black2"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fullName"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="left"
+        />
+    <TextView
+        android:id="@+id/last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/LastName"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="left"
+        />
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="left"
+        />
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="left"
+        />
+
+    <TextView
+        android:id="@+id/fjalkalimi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fjalkalimi"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="left"
+        />
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:src="@drawable/car"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/llogaria"
+        android:layout_gravity="center"
+        />
+
+        <Button
+            android:id="@+id/login_register"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/black"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+ />
+
+
+
+</LinearLayout>
