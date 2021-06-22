@@ -3,21 +3,29 @@ package fiek.unipr.online_rent_a_car;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
 
 public class register_activity extends AppCompatActivity {
 
     Button button_login,button_register;
     EditText username,lastname,email,num_tel,password;
+    SharedPreferences sharedPreferences;
     //Krijimi i nje objekti DBHelper
     DBHelper db;
+
+    //Brenda klases ne kemi krijuar objektet e SharedPreferences dhe i thrrasim tek metoda getSharedPreferences()
+       private static final String SHARED_PREF_NAME ="mypref";
+       private static final String KEY_NAME = "username";
+       private static final String KEY_LASTNAME = "lastname";
+       private static final String KEY_EMAIL = "email";
+       private static final String KEY_NUMBER = "number";
+       private static final String KEY_PASSWORD = "password";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +33,28 @@ public class register_activity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         getSupportActionBar().hide();
 
-        username = (EditText)findViewById(R.id.sgn_name);
-        lastname = (EditText)findViewById(R.id.sgn_lastname);
-        email = (EditText) findViewById(R.id.sgn_email);
-        num_tel = (EditText) findViewById(R.id.sgn_number);
-        password = (EditText) findViewById(R.id.sgn_psw);
-        button_register = (Button) findViewById(R.id.btn_register);
-        
+        username = findViewById(R.id.sgn_name);
+        lastname = findViewById(R.id.sgn_lastname);
+        email = findViewById(R.id.sgn_email);
+        num_tel = findViewById(R.id.sgn_number);
+        password = findViewById(R.id.sgn_psw);
+
+        //Duke vendos MODE_PRIVATE file behet i qasshem vetem duke perdor aplikacionin e thirrjes
+        sharedPreferences =getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+
+        //Kur te hapet aktiviteti i ri ReigsterInfo se pari te kontrollojme nese te dhenat shared preferences jane ne rregull ose jo
+        String name =sharedPreferences.getString(KEY_NAME,null);
+
+        if(name != null){
+            //Nese emri eshte ne rregull atehere thirre aktivitetin e ri RegisterInfo
+            Intent intent = new Intent(register_activity.this,RegisterInfo.class);
+            startActivity(intent);
+        }
+
+        button_register = findViewById(R.id.btn_register);
         db = new DBHelper(this);
 
-        button_login = (Button)findViewById(R.id.login);
+        button_login = findViewById(R.id.login);
         button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +73,9 @@ public class register_activity extends AppCompatActivity {
                 String numri = num_tel.getText().toString();
                 String psw = password.getText().toString();
 
+
                 if(!validateName() | !validateLastName() | !validateEmail() | !validatePhone() | !validatePassword()){
+
                     return;
                 }
                 else {
@@ -62,6 +84,17 @@ public class register_activity extends AppCompatActivity {
                     if(check_user_result == false){
                           Boolean rez = db.insertData(emri,mbiemri,mail,numri,psw);
                           if(rez == true){
+                             //SharedPreferences for register!
+                              SharedPreferences.Editor editor = sharedPreferences.edit();
+                              editor.putString(KEY_NAME,emri);
+                              editor.putString(KEY_LASTNAME,mbiemri);
+                              editor.putString(KEY_EMAIL,mail);
+                              editor.putString(KEY_NUMBER,numri);
+                              editor.putString(KEY_PASSWORD,psw);
+                              editor.apply();
+
+                              Intent intent = new Intent(register_activity.this,RegisterInfo.class);
+                              startActivity(intent);
 
                              Toast.makeText(register_activity.this, "Regjistrimi përfundoj me sukses!", Toast.LENGTH_SHORT).show();
 
