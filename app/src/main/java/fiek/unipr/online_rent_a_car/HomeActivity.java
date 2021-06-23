@@ -3,6 +3,8 @@ package fiek.unipr.online_rent_a_car;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,14 +28,37 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.home_menu,menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-       if(item.getItemId() == R.id.logut)
-           Toast.makeText(HomeActivity.this,"Butoni LogOut u klikua",Toast.LENGTH_LONG).show();
+       if(item.getItemId() == R.id.logut) {
+           Toast.makeText(HomeActivity.this, "Butoni LogOut u klikua", Toast.LENGTH_LONG).show();
+       }else if(item.getItemId() == R.id.info){
+
+         final AlertDialog.Builder info_builder = new AlertDialog.Builder(this);
+           info_builder.setTitle("Informacion:")
+                 .setMessage("Aplikacioni Rent A Car Online është një aplikacion që na ofron mundësi që në cdo kohë të" +
+                         " informohemi ne lidhje me vetura me qera në tërë territorin e Kosoves!")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Faleminderit!", Toast.LENGTH_LONG).show();
+                    }
+                })
+                 .setNegativeButton(" ", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         //nothing
+                     }
+                 })
+                 .setCancelable(false);
+
+               AlertDialog dialog = info_builder.create();
+               dialog.show();
+       }
            return super.onOptionsItemSelected(item);
     }
 }

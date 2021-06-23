@@ -8,13 +8,16 @@
          app:showAsAction="never"
          />
 
-     <item android:id="@+id/info"
-         android:title="info"
+     <item android:id="@+id/mode"
+         android:title="Choose Mode"
+         android:icon="@drawable/dark_mode"
+         android:actionLayout="@layout/dark_mode"
          />
 
-     <item android:id="@+id/help"
-         android:title="Help"
+     <item android:id="@+id/info"
+         android:title="Info"
          />
+
 
      <item android:id="@+id/item3"
          android:title="Exit"
