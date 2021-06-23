@@ -1,17 +1,25 @@
 package fiek.unipr.online_rent_a_car;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
@@ -19,7 +27,8 @@ public class Login extends AppCompatActivity {
 
     TextInputLayout textInputEmri;
     TextInputLayout textInputPass;
-    Button button_register,button_login,button_forget;
+    TextView text_forget_link;
+    Button button_register,button_login;
 
     DBHelper db;
     @Override
@@ -28,11 +37,11 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
-        textInputEmri = (TextInputLayout)findViewById(R.id.username);
-        textInputPass = (TextInputLayout)findViewById(R.id.password);
-        button_register = (Button)findViewById(R.id.register);
-        button_login = (Button)findViewById(R.id.btn_login);
-        button_forget = (Button)findViewById(R.id.btn_password);
+        textInputEmri = findViewById(R.id.username);
+        textInputPass = findViewById(R.id.password);
+        button_register = findViewById(R.id.register);
+        button_login = findViewById(R.id.btn_login);
+        text_forget_link = findViewById(R.id.link_password);
 
         db =new DBHelper(this);
 
@@ -69,9 +78,11 @@ public class Login extends AppCompatActivity {
     });
 
 
-    button_forget.setOnClickListener(new View.OnClickListener() {
+        text_forget_link.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+
         }
     });
     }

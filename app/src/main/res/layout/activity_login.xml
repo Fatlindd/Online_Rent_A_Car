@@ -77,15 +77,17 @@
                 android:hint="@string/etPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_password"
-            android:layout_width="300dp"
+        <TextView
+            android:id="@+id/link_password"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
             android:text="@string/forget_password"
             android:textColor="#ff4d4d"
             android:layout_gravity="end"
-            android:textSize="12sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="18sp"
             android:layout_margin="0dp"/>
 
         <Button
