@@ -30,7 +30,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-database:20.0.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-analytics:19.0.0'
     def fragment_version = "1.3.4"
 
     // Java language implementation
@@ -44,4 +45,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //Per gif tek registerInfo
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
 }

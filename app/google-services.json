@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "8204693941",
-    "project_id": "online-rent-a-car-981f7",
-    "storage_bucket": "online-rent-a-car-981f7.appspot.com"
+    "project_number": "520533678401",
+    "project_id": "rentacar-93261",
+    "storage_bucket": "rentacar-93261.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:8204693941:android:9f32e003fb5f633ca229fc",
+        "mobilesdk_app_id": "1:520533678401:android:adebe406e2582fa50be9c0",
         "android_client_info": {
           "package_name": "fiek.unipr.online_rent_a_car"
         }
       },
       "oauth_client": [
         {
-          "client_id": "8204693941-32rdraidj5d57rcq8m5t09l9itebvimr.apps.googleusercontent.com",
+          "client_id": "520533678401-c8lvmhci0hodh9cr7a77hk4u29tnr75m.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAi6xzXj2865n00w9c4dmCeDj3fGOVEgFY"
+          "current_key": "AIzaSyA0lGA1bhvztNyTCG8UeRQMtqIC0lf_Qgk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "8204693941-32rdraidj5d57rcq8m5t09l9itebvimr.apps.googleusercontent.com",
+              "client_id": "520533678401-c8lvmhci0hodh9cr7a77hk4u29tnr75m.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
