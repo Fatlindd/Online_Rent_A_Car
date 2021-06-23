@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -16,13 +18,19 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity {
 
+    //Per tek AlertDialog i mode NIGHT
     String select_options = "Light";
+    //Referenca tek activity_home per snackbars
+    RelativeLayout home_activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().setTitle("Online Rent A Car");
+
+        //Qasja tek layout
+        home_activity = findViewById(R.id.home_activity);
 
     }
 
@@ -69,13 +77,23 @@ public class HomeActivity extends AppCompatActivity {
                @Override
                public void onClick(DialogInterface dialog, int which) {
                    select_options = mode_choose[which];
-                   Toast.makeText(HomeActivity.this, "Ju zgjodhet: "+select_options, Toast.LENGTH_SHORT).show();
+
+                   //Toast.makeText(HomeActivity.this, "Ju zgjodhet: "+select_options, Toast.LENGTH_SHORT).show();
                }
            });
            builder.setPositiveButton("Choose", new DialogInterface.OnClickListener() {
                @Override
                public void onClick(DialogInterface dialog, int which) {
-                   dialog.dismiss();
+
+                   //SnackBar
+                   Snackbar.make(home_activity,"Ju zgjodhet: "+select_options,Snackbar.LENGTH_LONG)
+                           .setAction("Close", new View.OnClickListener() {
+                               @Override
+                               public void onClick(View v) {
+
+                               }
+                           }).setDuration(8000)
+                           .show();
                }
            });
            builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
