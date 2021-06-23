@@ -4,23 +4,23 @@
 
      <item android:id="@+id/logut"
          android:title="@string/logut"
-         android:icon="@drawable/ic_logout"
          app:showAsAction="never"
          />
 
      <item android:id="@+id/mode"
          android:title="Choose Mode"
-         android:icon="@drawable/dark_mode"
-         android:actionLayout="@layout/dark_mode"
+         app:showAsAction="never"
          />
 
      <item android:id="@+id/info"
          android:title="Info"
+         app:showAsAction="never"
          />
 
 
      <item android:id="@+id/item3"
          android:title="Exit"
+         app:showAsAction="never"
          />
 
 

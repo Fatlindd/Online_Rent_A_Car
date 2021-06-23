@@ -16,6 +16,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity {
 
+    String select_options = "Light";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +60,32 @@ public class HomeActivity extends AppCompatActivity {
 
                AlertDialog dialog = info_builder.create();
                dialog.show();
+       }else if(item.getItemId() == R.id.mode){
+
+           String[] mode_choose = {"LIGHT","DARK","DEFAULT MODE"};
+           AlertDialog.Builder builder = new AlertDialog.Builder(this);
+           builder.setTitle("Zgjedhni modin e aplikacionit:");
+           builder.setSingleChoiceItems(mode_choose, 0, new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   select_options = mode_choose[which];
+                   Toast.makeText(HomeActivity.this, "Ju zgjodhet: "+select_options, Toast.LENGTH_SHORT).show();
+               }
+           });
+           builder.setPositiveButton("Choose", new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                   dialog.dismiss();
+               }
+           });
+           builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+               @Override
+               public void onClick(DialogInterface dialog, int which) {
+                  dialog.dismiss();
+               }
+           });
+           builder.show();
+
        }
            return super.onOptionsItemSelected(item);
     }
