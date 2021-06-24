@@ -2,15 +2,20 @@ package fiek.unipr.online_rent_a_car;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -19,9 +24,12 @@ import com.google.android.material.snackbar.Snackbar;
 public class HomeActivity extends AppCompatActivity {
 
     //Per tek AlertDialog i mode NIGHT
-    String select_options = "Light";
+    String select_options = "DEFAULT MODE";
     //Referenca tek activity_home per snackbars
     RelativeLayout home_activity;
+    TextView textView;
+    DBHelper db;
+    EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +37,18 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().setTitle("Online Rent A Car");
 
-        //Qasja tek layout
+        //Qasja tek layout per Snackbar view
         home_activity = findViewById(R.id.home_activity);
+        textView = findViewById(R.id.tv1);
+        password = findViewById(R.id.password);
+        db = new DBHelper(this);
 
+        //DARK MODE , LIGHT MODE AND DEFAULT MODE
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else{
+            setTheme(R.style.Theme_Light);
+        }
     }
 
     @Override
@@ -44,8 +61,36 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-       if(item.getItemId() == R.id.logut) {
-           Toast.makeText(HomeActivity.this, "Butoni LogOut u klikua", Toast.LENGTH_LONG).show();
+        if(item.getItemId() == R.id.logut) {
+
+            AlertDialog.Builder logout=new AlertDialog.Builder(this);
+            logout.setTitle("Shëno passwordin llogarise tuaj: ");
+
+            final EditText password = new EditText(this);
+            password.setInputType(InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+            logout.setView(password);
+
+            logout.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                    String user = password.getText().toString().trim();
+
+                    if(user.equals("")){
+                        Toast.makeText(HomeActivity.this, "Jepni passwordin e lloagrise tuaj!", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Boolean result = db.check_password(user);
+
+                        if(result == true){
+                            Intent intent =new Intent(getApplicationContext(),Login.class);
+                            startActivity(intent);
+                        }else{
+                            Toast.makeText(HomeActivity.this, "Passwordi juaj është gabim!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            });
+              logout.show();
        }else if(item.getItemId() == R.id.info){
 
          final AlertDialog.Builder info_builder = new AlertDialog.Builder(this);
@@ -77,8 +122,6 @@ public class HomeActivity extends AppCompatActivity {
                @Override
                public void onClick(DialogInterface dialog, int which) {
                    select_options = mode_choose[which];
-
-                   //Toast.makeText(HomeActivity.this, "Ju zgjodhet: "+select_options, Toast.LENGTH_SHORT).show();
                }
            });
            builder.setPositiveButton("Choose", new DialogInterface.OnClickListener() {
@@ -94,6 +137,15 @@ public class HomeActivity extends AppCompatActivity {
                                }
                            }).setDuration(8000)
                            .show();
+
+                   if(select_options == "DARK"){
+                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+                   }else{
+                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+                   }
+
                }
            });
            builder.setNegativeButton("Exit", new DialogInterface.OnClickListener() {
