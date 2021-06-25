@@ -57,6 +57,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Largimi ose fshehja e ActionBar nga xml fajlli.
         ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
