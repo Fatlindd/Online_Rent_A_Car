@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Online_Rent_A_Car">
+        android:theme="@style/Theme.Light"
+        >
         <activity android:name=".RegisterInfo" />
         <activity android:name=".HomeActivity">
             <intent-filter>
@@ -22,6 +23,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.Online_Rent_A_Car.NoActionBarAndStatusBar">
+
         </activity>
 
         <meta-data

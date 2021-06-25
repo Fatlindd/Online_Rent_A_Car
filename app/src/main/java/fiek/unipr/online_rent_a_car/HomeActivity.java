@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
               logout.show();
        }else if(item.getItemId() == R.id.info){
 
-         final AlertDialog.Builder info_builder = new AlertDialog.Builder(this);
+         /*final AlertDialog.Builder info_builder = new AlertDialog.Builder(this);
            info_builder.setTitle("Informacion:")
                  .setMessage("Aplikacioni Rent A Car Online është një aplikacion që na ofron mundësi që në cdo kohë të" +
                          " informohemi ne lidhje me vetura me qera në tërë territorin e Kosoves!")
@@ -112,7 +112,12 @@ public class HomeActivity extends AppCompatActivity {
                  .setCancelable(false);
 
                AlertDialog dialog = info_builder.create();
-               dialog.show();
+               dialog.show();*/
+               //Krijimi i nje fragmenti tek ProfileFragment rreth options menu info.
+               getSupportFragmentManager().beginTransaction().replace(R.id.container,new ProfileFragment()).commit();
+               //Largimi i pamjes(view) te HomeActivity layout tek fragment_profile.xml
+               textView.setVisibility(View.GONE);
+
        }else if(item.getItemId() == R.id.mode){
 
            String[] mode_choose = {"LIGHT","DARK","DEFAULT MODE"};

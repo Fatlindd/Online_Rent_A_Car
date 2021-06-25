@@ -33,6 +33,13 @@
     <string name="number">Nr.Telefonit:</string>
     <string name="fjalkalimi">Fjalëkalimi:</string>
     <string name="llogaria">Kliko Login për tu bërë pjesë e aplikacionit!</string>
+     <!--Fragment_Profile-->
+    <string name="info">Çfarë mundëson Aplikacioni jonë?</string>
+    <string name="info_app">Aplikacioni <b>Rent A Car Online</b> eshte nje APP qe eshte zhvilluar ne <b>Android Studio</b> ne gjuhen programuese JAVA , e cila si qellim kryesor e ka informimin e nje perdoruesi rreth veturave me qera ne <b>Republiken e Kosoves</b>.Aplikacioni eshte zhvilluar ne ate menyre qe ti pershtate te gjitha paisjeve dhe ti pershtet madhesive te ndryshme te ekraneve. Aplikacioni permban nje <b>Login</b> dhe <b>Register FORM</b> paraprakisht ku nje perdorues eshte i obliguar fillimisht te regjistrohet dhe me pastaj te kycet si perdorues i aplikacionit. </string>
 
+    <!--Per DARK DHE NIGHT MODE-->
+    <string name="fjala">Aplikacioni Rent A Car Online eshte nje APP qe eshte zhvilluar ne Android Studio ne gjuhen programuese JAVA , e cila si qellim kryesor e ka informimin e nje perdoruesi rreth veturave me qera ne Republiken e Kosoves.Aplikacioni eshte zhvilluar ne ate menyre qe ti pershtate te gjitha paisjeve dhe ti pershtet madhesive te ndryshme te ekraneve.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
