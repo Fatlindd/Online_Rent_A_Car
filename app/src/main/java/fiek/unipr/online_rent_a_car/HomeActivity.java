@@ -45,9 +45,9 @@ public class HomeActivity extends AppCompatActivity {
 
         //DARK MODE , LIGHT MODE AND DEFAULT MODE
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
-            setTheme(R.style.Theme_Dark);
+            setTheme(R.style.Theme_Online_Rent_A_Car);
         }else{
-            setTheme(R.style.Theme_Light);
+            setTheme(R.style.Theme_Online_Rent_A_Car);
         }
     }
 
@@ -133,6 +133,16 @@ public class HomeActivity extends AppCompatActivity {
                @Override
                public void onClick(DialogInterface dialog, int which) {
 
+                   if(select_options == "DARK"){
+                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+                   }else if(select_options.equals("LIGHT")){
+                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+                   }else{
+                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                   }
+
                    //SnackBar
                    Snackbar.make(home_activity,"Ju zgjodhet: "+select_options,Snackbar.LENGTH_LONG)
                            .setAction("Close", new View.OnClickListener() {
@@ -142,14 +152,6 @@ public class HomeActivity extends AppCompatActivity {
                                }
                            }).setDuration(8000)
                            .show();
-
-                   if(select_options == "DARK"){
-                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-
-                   }else{
-                       AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-                   }
 
                }
            });

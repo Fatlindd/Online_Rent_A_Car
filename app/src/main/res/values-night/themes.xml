@@ -12,5 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <!--For NIGHT MODE SCREEN-->
+        <item name="background_color">#101010</item>
+        <item name="text_color">#FFFFFF</item>
     </style>
+
 </resources>

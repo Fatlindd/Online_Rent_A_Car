@@ -4,18 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:layout_gravity="center"
     android:id="@+id/home_activity"
+    android:background="?attr/background_color"
     tools:context=".HomeActivity">
 
-     <TextView
-         android:layout_width="match_parent"
+     <FrameLayout
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:gravity="center"
-         android:layout_centerHorizontal="true"
-         android:textSize="40sp"
+         android:id="@+id/container">
 
-         android:text="HOME ACTIVITY"
-         />
+
+          <TextView
+          android:id="@+id/tv1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/fjala"
+          android:textColor="?attr/text_color"
+          android:gravity="center"
+          android:layout_centerHorizontal="true"
+          />
+
+     </FrameLayout>
+
 
 </RelativeLayout>
