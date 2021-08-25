@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:src="@drawable/volkswagen"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        />
+
+     <TextView
+         android:id="@+id/txtName"
+         android:layout_toRightOf="@+id/image"
+         android:layout_marginLeft="20dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         style="@style/TextAppearance.AppCompat.Title"
+         android:text="Volkswagen"
+         />
+
+    <TextView
+        android:id="@+id/txtSub"
+        android:layout_toRightOf="@+id/image"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtName"
+        android:maxLength="50"
+        android:singleLine="true"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:text="Kliko për më shumë info!"
+        />
+</RelativeLayout>
