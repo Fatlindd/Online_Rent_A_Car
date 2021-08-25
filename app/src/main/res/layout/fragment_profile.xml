@@ -42,8 +42,11 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/purple_200"
         android:id="@+id/btn_back"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -23,7 +23,6 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.Online_Rent_A_Car.NoActionBarAndStatusBar">
-
         </activity>
 
         <meta-data

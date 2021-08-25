@@ -7,19 +7,25 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -30,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView textView;
     DBHelper db;
     EditText password;
-
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +45,26 @@ public class HomeActivity extends AppCompatActivity {
 
         //Qasja tek layout per Snackbar view
         home_activity = findViewById(R.id.home_activity);
-        textView = findViewById(R.id.tv1);
+        //textView = findViewById(R.id.tv1);
         password = findViewById(R.id.password);
         db = new DBHelper(this);
+
+        listView = findViewById(R.id.lvVetura);
+
+        //krijimi te dhenave
+       ArrayList<Car> arrayList = new ArrayList<>();
+
+       arrayList.add(new Car(R.drawable.volkswagen,"Volkswagen","Kliko për më shumë info!"));
+       arrayList.add(new Car(R.drawable.audi,"Audi","Kliko për më shumë info!"));
+       arrayList.add(new Car(R.drawable.bmw,"BMW","Kliko për më shumë info!"));
+       arrayList.add(new Car(R.drawable.mercedes,"Mercedes","Kliko për më shumë info!"));
+       arrayList.add(new Car(R.drawable.opel,"Opel","Kliko për më shumë info!"));
+       arrayList.add(new Car(R.drawable.peugeot,"Peugeot","Kliko për më shumë info!"));
+
+       //Krijimi i nje Custom Adapter
+       CarAdapter carAdapter = new CarAdapter(this,R.layout.list_row,arrayList);
+
+       listView.setAdapter(carAdapter);
 
         //DARK MODE , LIGHT MODE AND DEFAULT MODE
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
@@ -49,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
         }else{
             setTheme(R.style.Theme_Online_Rent_A_Car);
         }
-    }
+      }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
